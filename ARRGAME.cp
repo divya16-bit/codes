@@ -8,7 +8,50 @@
 using namespace std;
 #include<string.h>
 //what about above line
+int main(){
+int t;
+cin>>t;
+while(t--){
+    int n;
+    cin>>n;
+   int arr[n];
+   for(int i=0;i<n;i++)
+    cin>>arr[i];
+    int count=0;
+    int count2=0;
+     int temp=0;
+    int total=0;
+    for(int i=0;i<n;i++){
+        if(arr[i]==0){
+        temp++;
+        total++;
+        }
+        else
+        {
+            if(temp>count)  
+                {   cnt2=max(cnt2,cnt);
+                    cnt=temp;
+                } 
+            else if(temp>count2)
+                count2=temp;
+            temp=0;
+        }
+    }
+     string res="";
+    if(count%2==0)
+    res="No";
 
+    else {
+        if(count==1&&total>1)
+        res="No";
+        else if(count2>(count/2))
+        res="No";
+        else res="Yes";
+    }
+cout<<res<<"\n";
+}
+    return 0;
+}
 //aditya ranaut- phoenix_aditya
 map<int,int> counter;
 
@@ -41,7 +84,6 @@ void solve()
     }
         maxzero=max(tempzero,maxzero);
         tempzero=0;
-    
     if(maxzero==1 && zerocounter==1)
         cout<<"Yes\n";
     else if(maxzero>2 && maxzero%2!=0)
